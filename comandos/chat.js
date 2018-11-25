@@ -8,6 +8,7 @@ module.exports.run = (bot, message, args) => {
     }, (erro, docs) => {
         var channel = message.mentions.channels.first();
         if(docs){
+            if(message.member.hasPermission(['ADMINISTRATOR'])) return message.channel.send(`${message.author}, você não tem permissão necessaria!`);
             if(args[0] === 'regras'){
                 if(!channel){
                     docs.chatRegras = message.channel.id;
