@@ -7,7 +7,7 @@ module.exports.run = (bot, message, args) => {
         '_id': message.guild.id
     }, (erro, docs) => {
         if(docs){
-            if(message.member.hasPermission(['ADMINISTRATOR'])) return message.channel.send(`${message.author}, você não tem permissão necessaria!`);
+                if(!message.member.hasPermission(['ADMINISTRATOR'])) return message.channel.send(`${message.author}, você não tem permissão necessária!`)
             let role = message.mentions.roles.first()
             if(!role){
                 message.channel.send(`${message.author}, você está utilizando o comando de forma incorreta! Use: ${config.prefix}muterole @role`);
