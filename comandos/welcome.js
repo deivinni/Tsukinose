@@ -9,7 +9,7 @@ module.exports.run = (bot, message, args) => {
     }, (erro, docs) => {
         if(docs){
             if(message.author.id !== 'seu id' && message.member.hasPermission('ADMINISTRATOR')){
-                return message.channel.send(`${message.author}, você não tem permissão necessaria!`);
+                return message.channel.send(`${message.author}, você não tem permissão necessária!`);
             }
             if(!args[0]){
                 return message.channel.send(`${message.author}, está utilizando o comando de forma incorreta! Use: \`${config.prefix}welcome <setar || remover || info> (chat)\``);
