@@ -25,6 +25,7 @@ module.exports.run = (bot, message, args) => {
         '_id': message.guild.id
     }, (erro, docs) => {
         if(docs){
+            if(message.member.hasPermission(['ADMINISTRATOR'])) return message.channel.send(`${message.author}, você não tem permissão necessaria!`);
             let channel = message.mentions.channels.first();
             if(!channel){
                 docs.contador     = true;
